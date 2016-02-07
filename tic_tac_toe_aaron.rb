@@ -62,7 +62,7 @@ def player_one_next_move
     puts "Player 1 choose a remaining number."
     player_one_next_answer = gets.chomp
     player_one_next_answer.to_i
-    if player_one_next_answer 
+    if player_one_next_answer = player_first_move
 
 
 
