@@ -26,6 +26,56 @@ print_game_board(board_array)
 #first move's position
 
 
+player1_second_move = player_one_second_move
+board_array[player1_second_move-1] = player_one
+
+print_game_board(board_array)
+
+player2_second_move = player_two_second_move
+board_array[player2_second_move-1] = player_two
+
+print_game_board(board_array)
+
+player1_third_move = player_one_third_move
+board_array[player1_third_move-1] = player_one
+
+print_game_board(board_array)
+
+player2_third_move = player_two_third_move
+board_array[player2_third_move-1] = player_two
+
+print_game_board(board_array)
+
+player1_fourth_move = player_one_fourth_move
+board_array[player1_fourth_move-1] = player_one
+
+print_game_board(board_array)
+
+player2_fourth_move = player_two_fourth_move
+board_array[player2_fourth_move-1] = player_two
+
+print_game_board(board_array)
+
+player1_last_move = player_one_last_move
+board_array[player1_last_move-1] = player_one
+
+print_game_board(board_array)
+
+winner
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
