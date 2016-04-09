@@ -34,9 +34,8 @@ def test_all_winning_combinations
 	assert_equal(true,all_winning_combinations(["O",2,3,4,"O",6,7,8,"O"],"O"))
 end 
 
-# def test_game_ends_tie
-# 	assert_equal(true,game_ends_tie(["X","X","O","0","X","O","X","O","X"]))
-# end 
-
+def test_game_ends_tie
+	assert_equal(9,game_ends_tie(["X","X","O","X","O","O","X","O","X"]))
+end
 
 end 

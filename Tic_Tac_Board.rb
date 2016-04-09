@@ -38,17 +38,20 @@ end
  	end
  end 
 
- # def game_ends_tie(game_board,marker)
- # 	 if all_winning_combinations(game_board,marker) == false
- # 	 	game_board.each do |value|
- # 	 		if value == "X" || value == "O"
- # 	 			true #means there is a tie as an X or O in all indices
- # 	 		else 
- # 	 			false #means some indices do not have a marker
- # 	 		end 
+ def game_ends_tie(game_board)
+ 	 	game_board.each do |value|
+ 	 		while value == "X" || value == "O" 
+ 	 			board_array << value 
+ 	 		break if board_array.count = 9
+ 	 		end 
+ 	 	end 
 
- # 	 end 
- # end 
+ end 
+
+
+
+ 
+
 
 
 
