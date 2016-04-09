@@ -40,13 +40,12 @@ end
 
  def game_ends_tie(game_board)
  	 	game_board.each do |value|
- 	 		while value == "X" || value == "O" 
+ 	 		if value == "X" || value == "O" 
  	 			board_array << value 
- 	 		break if board_array.count = 9
+ 	 	        board_array.count = 9
  	 		end 
- 	 	end 
-
- end 
+ 	 	end
+ end
 
 
 
