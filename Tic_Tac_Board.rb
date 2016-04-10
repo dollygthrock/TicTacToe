@@ -41,6 +41,16 @@ end
  		all_winning_combinations(game_board, marker) || game_ends_tie(game_board)
  end 
 
+ def get_available_spaces(board_array)
+		open_spaces = []
+		board_array.each do |value|
+			if value.is_a?(Fixnum)
+			open_spaces << value
+			end
+	end
+	open_spaces
+end 
+
 
 
 
