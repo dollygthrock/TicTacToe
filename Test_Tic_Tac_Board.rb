@@ -35,4 +35,9 @@ def test_game_ends_tie
 	assert_equal(false,game_ends_tie(["X","X",3,4,5,6,"X",8,"X"]))
 end
 
+def test_game_over
+	assert_equal(true,game_over?(["X","X","X","O","O","X","O","X","O"], "X"))
+	assert_equal(false,game_over?([1,2,3,"X","X","O",7,8,"X"],"X"))
+end 
+
 end 

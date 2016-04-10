@@ -32,18 +32,15 @@ end
  end 
 
  def game_ends_tie(game_board)
- 		board_array = []
- 	 	game_board.each do |value|
- 	 		if value == "X" || value == "O" 
- 	 			board_array << value
-			end 
- 	 	end
- 	 if board_array.count == 9
- 	 	true
- 	 else
- 	 	false
- 	 end
+ 		game_board.all? do|value|
+ 			value.class == String  #x.is_a?(String) == true  another option
+ 		end
  end
+
+ def game_over?(game_board,marker)
+ 		all_winning_combinations(game_board, marker) || game_ends_tie(game_board)
+ end 
+
 
 
 
