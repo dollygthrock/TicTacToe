@@ -45,7 +45,7 @@ end
 		open_spaces = []
 		board_array.each do |value|
 			if value.is_a?(Fixnum)
-			open_spaces << value
+				open_spaces << value
 			end
 	end
 	open_spaces
