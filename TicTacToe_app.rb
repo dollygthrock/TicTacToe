@@ -1,5 +1,5 @@
 require 'sinatra'
-#require_relative '../../TicTacToe/AI_TicTacToe_Game.rb'
+require_relative 'AI_TicTacToe_Game.rb'
 #require_relative '../../TicTacToe/ttt_console.rb'
 
 enable :sessions
