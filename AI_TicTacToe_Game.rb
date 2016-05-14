@@ -1,6 +1,7 @@
-require_relative "simple_AI_ttt_game.rb"
-require_relative "sequential_AI_game.rb"
-require_relative "human_ttt_game.rb"
+# require_relative "simple_AI_ttt_game.rb"
+# require_relative "sequential_AI_game.rb"
+# require_relative "human_ttt_game.rb"
+
 
 def play_game(current,opponent,game_board)
 	move = current[:player_mode].get_move(game_board)

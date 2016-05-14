@@ -1,5 +1,7 @@
 require_relative "AI_TicTacToe_Game.rb"
 require_relative "human_ttt_game.rb"
+require_relative "sequential_AI_game.rb"
+require_relative "simple_AI_ttt_game.rb"
 
 def ask_to_play_game
     puts "Would you like to play an easy (enter E) or less easy (enter LE) game of tic-tac-toe?"

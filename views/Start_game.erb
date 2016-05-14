@@ -1,4 +1,3 @@
-Player one is <%=p1_marker%> and player two is <%=p2_marker%>.
 This is the gameboard:
 	<form action = "/start_game" method = "post">
 
@@ -6,21 +5,23 @@ This is the gameboard:
 <br/>
 <br/>
 <table>
-	<table border="1" cellpadding="40" bgcolor="gray">
+	<table border="1" cellpadding="80" bgcolor="red">
 		<tr>
-			<td>1</td>
-			<td>2</td>
-			<td>3</td>
+			<style=font-family:"comic sans" font-size:"120px">
+			<td><%=board[0]%></td>
+			<td><%=board[1]%></td>
+			<td><%=board[2]%></td>
 		</tr>
 		<tr>
-			<td>4</td>
-			<td>5</td>
-			<td>6</td>
+			<td><%=board[3]%></td>
+			<td><%=board[4]%></td>
+			<td><%=board[5]%></td>
 		</tr>
 		<tr>
-			<td>7</td>
-			<td>8</td>
-			<td>9</td>
+			<td><%=board[6]%></td>
+			<td><%=board[7]%></td>
+			<td><%=board[8]%></td>
+		</style>
 		</tr>
 </table>
 </form>
