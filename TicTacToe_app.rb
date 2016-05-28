@@ -2,7 +2,6 @@ require 'sinatra'
 require_relative 'AI_TicTacToe_Game.rb'
 require_relative 'simple_AI_ttt_game.rb'
 require_relative 'sequential_AI_game.rb'
-#require_relative 'human.rb'
 
 
 enable :sessions
@@ -58,8 +57,20 @@ end
 
 get '/make_move' do
 	session[:board] = update_board(session[:board], session[:move], session[:current_player][:marker])
-	#redirect function for game ends and go to next player
-	erb :Start_game, :locals => {:board => session[:board]}
+		if game_over?(session[:board],session[:current_player][:marker])
+		 	if all_winning_combinations(session[:board],session[:current_player][:marker])
+				"#{session[:current_player][:marker]} has WON!!!"
+			else 
+				"Game has ended."
+			end 
+		else
+			if session[:current_player] == session[:player_1]
+				session[:current_player] = session[:player_2]
+			else 
+				session[:current_player] = session[:player_1]
+			end 
+			erb :Start_game, :locals => {:board => session[:board]}
+		end
 end 
 
 
@@ -67,11 +78,5 @@ post '/human' do
 	session[:move] = params[:move].to_i
 	redirect '/make_move'
 end 
-		#player_1 = {:player_mode => Human.new, :marker => player_one_marker}
-		#player_2 = {:player_mode => Human.new, :marker => player_two_marker} 
-#erb :human_game, :locals => {:board => board, :player_one_marker => player_one_marker, :player_two_marker => player_two_marker, :player_one => session[:player_one], :player_two => session[:player_two]} 
-#end
-#board = create_new_board
-#board = play_game(player_1,player_2,board)
-
+		
 
