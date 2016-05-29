@@ -2,6 +2,7 @@ require 'sinatra'
 require_relative 'AI_TicTacToe_Game.rb'
 require_relative 'simple_AI_ttt_game.rb'
 require_relative 'sequential_AI_game.rb'
+require_relative 'unbeatable_game.rb'
 
 
 enable :sessions
@@ -29,15 +30,17 @@ post '/player_marker' do
 		player_1 = {:player_mode => "Human", :marker => player_one_marker}
 	elsif session[:player_one] == "Simple AI"
 		player_1 = {:player_mode => Simple.new, :marker => player_one_marker} 
-	else
+	elsif 
 		player_1 = {:player_mode => Sequential.new, :marker => player_one_marker} 
 	end
 	if session[:player_two] == "Human" 
 		player_2 = {:player_mode => "Human", :marker => player_two_marker}
 	elsif session[:player_two] == "Simple AI"
 		player_2 = {:player_mode => Simple.new, :marker => player_two_marker} 
-	else
+	elsif session[:player_two] == "Sequential AI"
 		player_2 = {:player_mode => Sequential.new, :marker => player_two_marker} 
+	else 
+		player_2 = {:player_mode => Unbeatable.new(player_two_marker), :marker => player_two_marker}
 	end
 	session[:player_1] = player_1
 	session[:player_2] = player_2
