@@ -41,7 +41,7 @@ def test_game_over
 end 
 
 def test_multiple_available_spaces
-	assert_equal([1,2,3],get_available_spaces([1,2,3,"X","O","X","O","X","O"]))
+	assert_equal([0,1,2],get_available_spaces([1,2,3,"X","O","X","O","X","O"]))
 	assert_equal([],get_available_spaces(["X","O","X","X","O","X","O","X","O"]))
 end
 

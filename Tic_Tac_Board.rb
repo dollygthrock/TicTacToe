@@ -15,21 +15,44 @@ def valid_position_on_game_board(game_board,position)
 	end
 end 
 
+def winning_lines(board)
+	[[board[0], board[1], board[2]],
+	[board[3], board[4], board[5]],
+	[board[6], board[7], board[8]],
+	[board[0], board[3], board[6]],
+	[board[1], board[4], board[7]],
+	[board[2], board[5], board[8]],
+	[board[0], board[4], board[8]],
+	[board[2], board[4], board[6]]]
+end
 
  def all_winning_combinations(game_board,marker)
- 	if game_board[0] == marker && game_board[1] == marker && game_board[2] == marker ||
- 	   game_board[3] == marker && game_board[4] == marker && game_board[5] == marker ||
- 	   game_board[6] == marker && game_board[7] == marker && game_board[8] == marker ||
- 	   game_board[0] == marker && game_board[3] == marker && game_board[6] == marker ||
- 	   game_board[1] == marker && game_board[4] == marker && game_board[7] == marker ||
- 	   game_board[2] == marker && game_board[5] == marker && game_board[8] == marker ||
- 	   game_board[0] == marker && game_board[4] == marker && game_board[8] == marker ||
- 	   game_board[2] == marker && game_board[4] == marker && game_board[6] == marker
- 	   true
- 	else
- 	   false
+ 	potential_wins = winning_lines(game_board)
+ 	win = false
+ 	potential_wins.each do |potential_win|
+ 		if potential_win.count(marker) == 3
+ 			win = true
+ 		end
  	end
- end 
+ 	win
+ end
+
+
+
+
+ # 	if game_board[0] == marker && game_board[1] == marker && game_board[2] == marker ||
+ # 	   game_board[3] == marker && game_board[4] == marker && game_board[5] == marker ||
+ # 	   game_board[6] == marker && game_board[7] == marker && game_board[8] == marker ||
+ # 	   game_board[0] == marker && game_board[3] == marker && game_board[6] == marker ||
+ # 	   game_board[1] == marker && game_board[4] == marker && game_board[7] == marker ||
+ # 	   game_board[2] == marker && game_board[5] == marker && game_board[8] == marker ||
+ # 	   game_board[0] == marker && game_board[4] == marker && game_board[8] == marker ||
+ # 	   game_board[2] == marker && game_board[4] == marker && game_board[6] == marker
+ # 	   true
+ # 	else
+ # 	   false
+ # 	end
+ # end 
 
  def game_ends_tie(game_board)
  		game_board.all? do|value|
