@@ -13,11 +13,9 @@ class Unbeatable
 			opponent = opponent_marker
 				if potential_block = board_array.detect{|opponent|winning_lines.count(opponent) == 2}
 				@move = potential_block(board_array[])#make move at the empty space where 2 opponents 
-					#are in a winning line
-				elsif corners = board_array[0,2,6,8]
-					corners.empty? #play the corners?
-					# if  
-
+					#are in a winning line; what goes in to the board array? not sure how to pick the 
+					#empty space??
+				elsif create_a_block = board_array.find{|opponent|}
 
 		elsif 
 
@@ -36,7 +34,21 @@ class Unbeatable
 
 		end 
 		@move - 1
-	end 
+	end
+
+	def try_sides
+		[1,3,5,7].each do|index|
+			return @board[index] = "O" if @board[index].is_a? #@board set as global variable?
+			end
+	end
+
+	def try_corners
+		[0,2,6,8].each do|index|
+			return @board[index] = "O" if @board[index].is_a? #board set as global variable?
+			end
+	end  
+
+
 
 	def play_win(game_board)
 		opponent = opponent_marker
