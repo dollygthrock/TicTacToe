@@ -72,14 +72,14 @@ get '/make_move' do
 			else 
 				session[:current_player] = session[:player_1]
 			end 
-			erb :Start_game, :locals => {:board => session[:board]}
 		end
+			erb :Start_game, :locals => {:board => session[:board]} 
 end 
 
 
 post '/human' do
 	session[:move] = params[:move].to_i
 	redirect '/make_move'
-end 
+end
 		
 
